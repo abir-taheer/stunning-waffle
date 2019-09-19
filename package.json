@@ -1,0 +1,25 @@
+{
+  "name": "stunning-waffle",
+  "version": "1.0.0",
+  "description": "New version of Stuyvesant High School's voting site in React and NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abir-taheer/stunning-waffle.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react",
+    "voting",
+    "runoff"
+  ],
+  "author": "Abir Taheer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abir-taheer/stunning-waffle/issues"
+  },
+  "homepage": "https://github.com/abir-taheer/stunning-waffle#readme"
+}
