@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/abir-taheer/stunning-waffle/issues"
   },
-  "homepage": "https://github.com/abir-taheer/stunning-waffle#readme"
+  "homepage": "https://github.com/abir-taheer/stunning-waffle#readme",
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "^1.4.4",
+    "express": "latest",
+    "morgan": "^1.9.1"
+  }
 }
