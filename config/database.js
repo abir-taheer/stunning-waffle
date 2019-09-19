@@ -1,5 +1,4 @@
 const mysql = require("mysql");
-const logError = require("./../errors");
 
 const pool = mysql.createPool({
   connectionLimit: 20,
@@ -8,7 +7,6 @@ const pool = mysql.createPool({
   password: "password",
   database: "stunning-waffle"
 });
-
 
 pool.getConnection(function(err, connection) {
   if (err) throw err;
@@ -25,16 +23,10 @@ const promiseQuery = (query, params) => {
         conn.release();
       } else {
         conn.query(query, params, (err, rows) => {
-          if(err){
-            logError(err);
-            reject("Error performing action on database");
-          } else {
-            resolve(rows);
-          }
+          err ? reject(err) : resolve(rows);
           conn.release();
         });
       }
-
     })
   });
 };

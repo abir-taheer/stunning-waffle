@@ -26,6 +26,8 @@
     "body-parser": "latest",
     "cookie-parser": "^1.4.4",
     "express": "latest",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.16.2",
     "morgan": "^1.9.1"
   }
 }

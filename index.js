@@ -15,8 +15,31 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
-// ROUTES
+const expressSession = require("express-session");
 
+const MySQLStore = require('express-mysql-session')(expressSession);
+const sessionStore = new MySQLStore({
+  clearExpired: true,
+  checkExpirationInterval: 900000,
+  expiration: (30 * 86400 * 1000),
+  createDatabaseTable: true,
+}, db.pool);
+
+const session = expressSession({
+  secret: "some_semi_permanent_not_so_secret_secret",
+  name: "session",
+  resave: true,
+  saveUninitialized: false,
+  store: sessionStore,
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    secure: false,
+    maxAge: (30 * 86400 * 1000)
+  }
+});
+
+// ROUTES
 
 server.listen(app_port, () => {
   console.log('listening on *:' + app_port);
