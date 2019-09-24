@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material/react-card": "^0.15.0",
+    "@material/react-drawer": "^0.15.0",
+    "@material/react-linear-progress": "^0.15.0",
+    "@material/react-list": "^0.15.0",
+    "@material/react-material-icon": "^0.15.0",
+    "@material/react-top-app-bar": "^0.15.0",
+    "@material/react-typography": "^0.15.0",
+    "@rmwc/circular-progress": "^5.7.0",
+    "@rmwc/snackbar": "^5.7.0",
     "material": "^0.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -28,5 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

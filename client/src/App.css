@@ -31,3 +31,58 @@
     transform: rotate(360deg);
   }
 }
+
+/*:root {*/
+/*  --mdc-theme-primary: #303030;*/
+/*  --mdc-theme-secondary: #661fff;*/
+/*  --mdc-theme-error: #b00020;*/
+/*  --mdc-theme-background: #fff;*/
+/*  --mdc-theme-surface: #fff;*/
+/*  --mdc-theme-on-primary: rgba(255, 255, 255, 1);*/
+/*  --mdc-theme-on-secondary: rgba(255, 255, 255, 1);*/
+/*  --mdc-theme-on-surface: rgba(0, 0, 0, 0.87);*/
+/*  --mdc-theme-on-error: #fff;*/
+/*  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);*/
+/*  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);*/
+/*  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.38);*/
+/*  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.38);*/
+/*  --mdc-theme-text-icon-on-background: rgba(0, 0, 0, 0.38);*/
+/*  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);*/
+/*  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);*/
+/*  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);*/
+/*  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);*/
+/*  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);*/
+/*  --mdc-theme-text-primary-on-dark: white;*/
+/*  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);*/
+/*  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);*/
+/*  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);*/
+/*  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);*/
+/*}*/
+
+@media only screen and (max-width: 600px){
+  .content-shade {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    position: fixed;
+  }
+}
+
+.drawer-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+.drawer-app-content {
+  flex: auto;
+  overflow: auto;
+}
+.top-app-bar-fix-adjust {
+  display: flex;
+  width: 100%;
+}
+.mdc-drawer--dismissible {
+  top: auto;
+}
