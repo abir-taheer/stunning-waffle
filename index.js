@@ -9,7 +9,7 @@ const http = require('http');
 const server = http.createServer(app);
 const morgan = require("morgan");
 
-const app_port = process.env.PORT || 5055;
+const app_port = process.env.PORT || 3001;
 
 app.use(cookieParser("some_semi_permanent_secret"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,6 +41,7 @@ const session = expressSession({
 });
 
 // ROUTES
+app.use(require("./routes/api/user/state"));
 
 server.listen(app_port, () => {
   console.log('listening on *:' + app_port);

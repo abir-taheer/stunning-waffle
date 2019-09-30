@@ -61,7 +61,7 @@ export function NavBar(props){
           <NavDrawer open={drawerOpen}/>
           <DrawerAppContent className='drawer-app-content'>
             {/* On Mobile Devices, hide the content because it will look distorted */}
-            <ContentShade open={drawerOpen}/>
+            <ContentShade open={drawerOpen} onClick={() => setDrawerOpen(!drawerOpen)}/>
             {props.children}
           </DrawerAppContent>
         </TopAppBarFixedAdjust>
@@ -70,6 +70,8 @@ export function NavBar(props){
 }
 
 export function NavDrawer(props) {
+  const context = React.useContext(AppContext);
+
   return (
       <Drawer
           dismissible
@@ -79,14 +81,21 @@ export function NavDrawer(props) {
             borderRightWidth: "0"
           }}>
         <DrawerHeader>
+          <Spacer height={"10px"} />
           <img
             src={"/logo192.png"}
             style={{
               width: "100px"
             }}
           />
-          <DrawerTitle use="h3">
-            <b>Not Signed In</b>
+          <DrawerTitle use="h3"
+            style={{
+              fontFamily: "Roboto",
+              fontWeight: "700",
+              fontSize: (context.user.signed_in ? "1em" : "1.2em")
+            }}
+          >
+            {context.user.email || "Not Signed In"}
           </DrawerTitle>
           <Spacer height={"20px"} />
         </DrawerHeader>
@@ -133,6 +142,6 @@ function ContentShade(props){
   }
 
   return (
-      <div className={["content-shade"]}/>
+      <div className={["content-shade"]} onClick={props.onClick}/>
   )
 }
