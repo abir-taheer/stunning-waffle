@@ -95,7 +95,7 @@ export function NavDrawer(props) {
               fontSize: (context.user.signed_in ? "1em" : "1.2em")
             }}
           >
-            {context.user.email || "Not Signed In"}
+            {context.user.signed_in ? `Hi ${context.user.first_name}!` : "Not Signed In"}
           </DrawerTitle>
           <Spacer height={"20px"} />
         </DrawerHeader>

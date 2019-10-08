@@ -9,12 +9,6 @@ export const AppContext = React.createContext({initialized: false});
 export class AppProvider extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      initialized: false,
-      user: {},
-      error: false,
-      errorTimeout: 3
-    };
 
     this.initializeState = () => {
       this.setState({initialized: false, error: false});
@@ -41,6 +35,15 @@ export class AppProvider extends React.Component {
             });
           })
     };
+
+    this.state = {
+      initialized: false,
+      user: {},
+      error: false,
+      errorTimeout: 3,
+      initializeState: this.initializeState
+    };
+
   }
 
   componentDidMount() {
